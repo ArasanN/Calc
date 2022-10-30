@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css1.css" >
+</head>
+<body>
+    <marquee>    <h1>Waiting for your Entry!</h1></marquee>
+    <div class="container" >
+        <div class="inner">
+            <input type="text" name="editor" placeholder="0" id="outdisplay">
+            <button type="button" onclick="cl()" >CL</button>
+            <button type="button" onclick="del()" >DEL</button>
+            <button type="button" onclick="display('%')">%</button>
+            <button type="button" onclick="display('/')">/</button>
+            <button type="button" onclick="display('7')">7</button>
+            <button type="button" onclick="display('8')">8</button>
+            <button type="button" onclick="display('9')">9</button>
+            <button type="button" onclick="display('-')">-</button>
+            <button type="button" onclick="display('4')">4</button>
+            <button type="button" onclick="display('5')">5</button>
+            <button type="button" onclick="display('6')">6</button>
+            <button type="button" onclick="display('+')">+</button>
+            <button type="button" onclick="display('1')">1</button>
+            <button type="button" onclick="display('2')">2</button>
+            <button type="button" onclick="display('3')">3</button>
+            <button type="button" onclick="display('.')">.</button>
+            <button type="button" onclick="display('*')">*</button>
+            <button type="button" onclick="display('0')">0</button>
+            <button type="button" onclick="ev()" class="eqal">ANS</button>
+
+
+
+
+            
+        </div>
+    </div>
+    <script>
+        let outdisplaym=document.getElementById("outdisplay");
+        function display(num){
+            outdisplaym.value += num; 
+        }
+        function cl(){
+            outdisplaym.value ="";
+        }
+        function ev(){
+            try{
+                 outdisplaym.value=eval(outdisplaym.value);
+            }
+            catch(err){
+                alert("Enter valid operator!");
+            }
+        }
+        function del(){
+            outdisplaym.value=outdisplaym.value.slice(0,-1);
+        }
+
+    </script>
+</body>
+</html>
